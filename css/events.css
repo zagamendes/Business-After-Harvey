@@ -1,0 +1,32 @@
+.recent-events-panel{
+	max-width: 350px; 
+	margin: 0 auto;
+}
+
+.p-sticky{
+	position: sticky;
+	top: 0;
+}
+.font-weight-bold{
+	font-weight: bold;
+}
+.panel{
+	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.recent-events-panel{
+	max-width: 360px; 
+	margin: 0 auto;
+}
+
+@media screen and (max-width:768px){
+	.recent-events-panel{
+		max-width: 100%;
+		margin-bottom: 20px;
+
+	}
+	.p-sticky{
+		position: relative;
+	}
+	
+}

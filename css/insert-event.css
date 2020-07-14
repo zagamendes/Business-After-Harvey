@@ -1,0 +1,12 @@
+.form-control-feedback{
+	
+	top: 10px!important;
+
+}
+
+.has-feedback .input-group-addon{
+
+	background: #eee;
+
+}
+

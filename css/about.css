@@ -1,0 +1,32 @@
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+@media screen and (max-width:768px){
+	
+	footer .row{
+		height: 550px !important;
+
+	}
+	footer{
+
+		position: relative;
+	}
+	.col-address{
+		top: 0 !important;
+		transform: translateY(0) !important;
+	}
+	.col-map{
+		top: 0 !important;
+		transform: translateY(0) !important;
+	}
+	.map{
+		width: auto !important;
+	}
+	.container{
+		margin-bottom: 40px;
+	}
+
+}

@@ -1,0 +1,72 @@
+body{
+	overflow-x: hidden;
+
+}
+.font-weight-bold{
+	font-weight: bold;
+}
+.burger-button{
+	background: #c72328;
+	color: white;
+}
+.burger-button span{
+	background: white !important;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+	background: #c72328;
+}
+.logo{
+	max-width: 200px;
+	display: inline-block;
+}
+.navbar-collapse.collapse{
+	height:75px !important;
+}
+.navbar-default{
+	background: #0079BE;
+}
+.pages-list{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	left: 20px !important;
+
+}
+
+.navbar-nav a:hover{
+	background-color:#C72328 !important;
+	color: #fff;
+	transition: all .3s;
+}
+.navbar-nav>.active>a{
+	background-color:#C72328 !important;
+}
+
+.pages-list a{
+	color: white !important;
+}
+
+@media screen and (max-width: 760px){
+	.pages-list{
+		top: 0;
+		transform: translateY(0)!important;
+		left: 0 !important;
+	}
+	.navbar-collapse.collapse{
+		height:auto !important;
+
+	}
+	.pages-list li{
+		border-bottom: 1px solid white;
+
+	}
+	
+
+}
+@media screen and (max-width: 500px){
+	#myCarousel p{
+		font-size: x-small;
+	}
+
+}

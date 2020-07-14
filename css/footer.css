@@ -1,0 +1,42 @@
+
+
+footer .row{
+	height:  210px; 
+	background: #0079BE !important;
+	margin: 0;
+	/*background-image:linear-gradient(to right,#c72328, #c1005b); */
+}
+.social-media{
+	padding: 10px 5px;
+	display: inline-block;
+	max-width: 55px;
+	margin: 0 auto;
+}
+.logo-rodape{
+	max-width: 190px;
+	margin: 0 auto;
+}
+.div-social-media{
+	margin: 0 auto;
+	width: fit-content;
+}
+@media screen and (max-width: 760px){
+	footer .row{
+		height: 510px !important ;
+	}
+	.col-address{
+		top: 0 !important;
+		transform: translateY(0) !important;
+	}
+	.col-map{
+		top: 0 !important;
+		transform: translateY(0) !important;
+	}
+	.map{
+		width: auto !important;
+	}
+	footer{
+		position: static !important;
+	}
+
+}
