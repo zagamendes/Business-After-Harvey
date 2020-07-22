@@ -1,20 +1,10 @@
 <?php
-	include("classes/event.php");
-
-	$eventDAO = new EventDAO();
-	$recentEvents = $eventDAO->recentEvents();
-	$event = $eventDAO->listContentById($_GET["id"]);
+include("classes/event.php");
 	include("header.php");
 	
-
 	
 ?>
-<head>
-  <title>Your Website Title</title>
-    <!-- You can use Open Graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-  
-</head>
+
 <style type="text/css">
 	.active{
 		background: #C72328 !important;
@@ -63,7 +53,7 @@
 							</div>
 							<div class="col-sm-6 col-xs-6"> 
 								 
-								<a class="btn btn-primary btn-block text-uppercase font-weight-bold" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://192.168.0.22/harvey/event?id=<?= $event->getId()?>">
+								<a class="btn btn-primary btn-block text-uppercase font-weight-bold" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://business-after-harvey.000webhostapp.com/event?id=<?= $event->getId()?>">
 									<span class="fab fa-facebook"></span> Share 
 								</a>
 								

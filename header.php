@@ -1,24 +1,57 @@
 <?php
 	$currentPage = basename($_SERVER['SCRIPT_NAME']);
+	
 
+
+	
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 	<head>
-		<title>Business After Harvey</title>
+		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="icon"  href="img/logo 1.jpg">
+		<link rel="image_src" href="img/logo 1.jpg">
+
 		<script src="js/jquery.min.js" ></script>
 		<script src="js/bootstrap.min.js" ></script>
 		<script src="js/events-events.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/header.css">
 		<link rel="stylesheet" type="text/css" href="css/fa/css/all.css">
-		<meta property="og:url"   content="https://www.your-domain.com/your-page.html" />
+
+		<meta name="robots" content="index">
+		<meta name="author" content="Izaac Mendes">
+		<meta name="description" content="website assigned to help market to rebuild itself after the Harvey Hurricane">
 		<meta property="og:type"  content="website" />
-		<meta property="og:title" content="Your Website Title" />
-		<meta property="og:description" content="Your description" />
-		<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+
+		<?php 
+			
+			if(isset($_GET["id"])){
+				
+
+				$eventDAO = new EventDAO();
+				$event = $eventDAO->listContentById($_GET["id"]); 
+				$recentEvents = $eventDAO->recentEvents(); 
+		?>
+
+				<meta property="og:url"   content="https://business-after-harvey.000webhostapp.com/event?id=<?= $event->getId()?>" />
+				<meta property="og:description" content="<?= $event->getDescription()?>" />
+				<meta property="og:image" content="img/<?= $event->getPhoto()?>" />
+				<meta property="og:title" content="<?= $event->getTitle()?>" />
+
+
+<?php		}else{ ?>
+				<meta property="og:title" content="Business After Harvey" />
+				<meta property="og:url"   content="https://business-after-harvey.000webhostapp.com/" />
+				<meta property="og:description" content="website assigned to help market to rebuild itself after the Harvey Hurricane" />
+				<meta property="og:image" content="img/logo 1.jpg" />
+				<title>Business After Harvey</title>
+<?php		}  ?>
+		
+		
 
 
 	</head>

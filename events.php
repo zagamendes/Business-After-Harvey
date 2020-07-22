@@ -66,7 +66,7 @@
 							</div>
 							<div class="col-sm-6 col-xs-6"> 
 								 
-								<a class="btn btn-primary btn-block text-uppercase font-weight-bold" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://192.168.0.22/harvey/event?id=<?= $event->getId()?>">
+								<a class="btn btn-primary btn-block text-uppercase font-weight-bold" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://business-after-harvey.000webhostapp.com/event?id=<?= $event->getId()?>">
 									<span class="fab fa-facebook"></span> Share 
 								</a>
 								
