@@ -1,82 +1,80 @@
 <?php
-	
-	$extensionList = array("jpg","jpeg","png");
 
-	include_once("../../classes/event.php");
+$extensionList = array("jpg", "jpeg", "png");
 
-	$eventDAO = new EventDAO();
-	$event = new Event();
-	
-	$status["ok"]=false;
-	$status["message"]="Photo is Required!";
+include_once("../../classes/event.php");
 
-	//some code
-	$form = $_POST;
-	
+$eventDAO = new EventDAO();
+$event = new Event();
 
-	$event->setId($form["id"]);
-	
-	$event->setTitle($form["title"]);
-	
-	$event->setDescription($form["description"]);
-	
-	$event->setLink($form["link"]);
-	
-	$event->setDate($form["date"]);
-	
-	$event->setStreet($form["street"]);
-	
-	$event->setTime($form["time"]);
+$status["ok"] = false;
+$status["message"] = "Photo is Required!";
 
-	$event->setZipcode($form["zipcode"]);
+//some code
+$form = $_POST;
 
-	$event->setNumber($form["number"]);
 
-	if(empty($_FILES["photo"]["name"])&&$event->getId()!="0"){
-		$event->setPhoto($form["currentPhoto"]);
-		
-	}else if(empty($_FILES["photo"]["name"])&&$event->getId()=="0") {
-		header("location:../event?status=error&error=Photo Is Required!");
-		die();
+$event->setId($form["id"]);
 
-	}else{
-		if(!isRightExtension($_FILES['photo']['name'],$extensionList)){
-			$status["message"]="File with format invalid!";
+$event->setTitle($form["title"]);
 
-			header("location:../event?status=error&error=Photo With Format Invalid!");
-			die();
-		}
-		
-		$event->setChangedPicture();
+$event->setDescription($form["description"]);
 
-		$newName = $_FILES["photo"]["name"];
-		
-		
-		$event->setPhoto($newName);
-		$event->setCurrentPhoto($form["currentPhoto"]);
-	}
-	
+$event->setLink($form["link"]);
 
-	$error=$eventDAO->save($event);
-	if($error==null){
-		$status["ok"]=true;
-		$status["message"]="saved";
-		move_uploaded_file($_FILES["photo"]["tmp_name"],"../../img/events/".$newName);	
+$event->setDate($form["date"]);
 
-		header("location:../event?status=ok");
-		die();
+$event->setStreet($form["street"]);
 
-	}else{
-		$status["ok"]=false;
-		$status["message"]=$error;
-		header("location:../event?status=error&error".$error);
-		die();
-	}
+$event->setTime($form["time"]);
 
-	echo json_encode($status);
+$event->setZipcode($form["zipcode"]);
+
+$event->setNumber($form["number"]);
+
+if (empty($_FILES["photo"]["name"]) && $event->getId() != "0") {
+	$event->setPhoto($form["currentPhoto"]);
+} else if (empty($_FILES["photo"]["name"]) && $event->getId() == "0") {
+	header("location:../event?status=error&error=Photo Is Required!");
 	die();
+} else {
+	if (!isRightExtension($_FILES['photo']['name'], $extensionList)) {
+		$status["message"] = "File with format invalid!";
 
-	function isRightExtension($file,$extensionList){
-		$extensao = pathinfo(strtolower($file),PATHINFO_EXTENSION);
-		return in_array($extensao, $extensionList);
+		header("location:../event?status=error&error=Photo With Format Invalid!");
+		die();
 	}
+
+	$event->setChangedPicture();
+
+	$newName = $_FILES["photo"]["name"];
+
+
+	$event->setPhoto($newName);
+	$event->setCurrentPhoto($form["currentPhoto"]);
+}
+
+
+$error = $eventDAO->save($event);
+if ($error == null) {
+	$status["ok"] = true;
+	$status["message"] = "saved";
+	move_uploaded_file($_FILES["photo"]["tmp_name"], "../../img/events/" . $newName);
+
+	header("location:../event?status=ok");
+	die();
+} else {
+	$status["ok"] = false;
+	$status["message"] = $error;
+	header("location:../event?status=error&error" . $error);
+	die();
+}
+
+echo json_encode($status);
+die();
+
+function isRightExtension($file, $extensionList)
+{
+	$extensao = pathinfo(strtolower($file), PATHINFO_EXTENSION);
+	return in_array($extensao, $extensionList);
+}

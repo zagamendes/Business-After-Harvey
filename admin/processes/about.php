@@ -19,6 +19,3 @@
 	}else{
 		header("location:../about?status=error&error=".$error);
 	}
-
-	
-?>

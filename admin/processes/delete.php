@@ -56,6 +56,3 @@
 			header("location:../".$page."?status=error&error=".$error);
 		}
 	}
-	
-	
-?>
