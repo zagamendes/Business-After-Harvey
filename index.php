@@ -1,4 +1,5 @@
 <?php
+echo"as";
 include("header.php");
 include("classes/connection.php");
 include("classes/slideshow.php");
