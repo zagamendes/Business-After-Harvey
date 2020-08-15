@@ -15,6 +15,7 @@ $photos = $slideshowDAO->listContent();
 }
 </style>
 <div class="container">
+	<h2>dssa</h2>
     <div id="myCarousel" class="carousel slide teste" data-ride="carousel">
 
         <!-- Indicators -->
